@@ -83,7 +83,7 @@ function convertToPrefix(infixStr){
     }
 
     console.log(prefix.join(''))
-    return prefix.join('')
+    return prefix.reverse().join('')
 }
 
 let q = "A+B-C/D^E*F"
