@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kinyua Infix Algos Web</title>
+</head>
+
+<body>
+    <h4>Infix Algos Editor..</h4>
+    <p>just type in the input and i will do the rest</p>
+    <a href="https://github.com/CreamyMilk/kinyua-infix-algos/blob/main/infixesAlgos.js">The Source Code</a>
+    <br />
+    <br />
+    <br />
+
+    <textarea type="text" name="infix" id="infix"></textarea>
+    <br />
+    <br />
+    <br />
+    <h3>Postfix :</h3><span></span>
+    <hr/>
+    <h3>Prefix:</h3> <span></span>
+
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+
+    <footer>
+        <p>AdmNo : CIT-223-043/2020</p>
+        <p>Name  : Kinyua Jotham Kabasa</p>
+    </footer>
+
+
+
+</body>
+<script src="./infixesAlgos.js"></script>
+<script>
+    let infixBox = document.getElementById('infix');
+    infixBox.addEventListener('input', function (e) {
+        console.log(e.target.value);
+        let infix = infixBox.value;
+        let postfix = convertToPostfix(infix);
+        let prefix = convertToPrefix(infix);
+        let postfixSpan = document.getElementsByTagName('span')[0];
+        let prefixSpan = document.getElementsByTagName('span')[1];
+        postfixSpan.innerHTML = postfix;
+        prefixSpan.innerHTML = prefix;
+    });
+</script>
+
+</html>

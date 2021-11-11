@@ -40,6 +40,7 @@ function convertToPostfix(infixStr) {
     }
 
     console.log(postfix)
+    return postfix
 }
 
 
@@ -82,6 +83,7 @@ function convertToPrefix(infixStr){
     }
 
     console.log(prefix.join(''))
+    return prefix.join('')
 }
 
 let q = "A+B-C/D^E*F"
