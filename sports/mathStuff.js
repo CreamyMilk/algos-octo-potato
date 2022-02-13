@@ -3,7 +3,7 @@
 // cartesianProduct( [ ['W','D','L'], ['W','D','L'] ] ) 
 // and I will give you this [ [ 'W', 'W' ], [ 'W', 'D' ], [ 'W', 'L' ], [ 'D', 'W' ], [ 'D', 'D' ], [ 'D', 'L' ], [ 'L', 'W' ], [ 'L', 'D' ], [ 'L', 'L' ] ]
 function cartesianProduct(arr) {
-    // allSlips just stored all generated outcome slips
+    // allSlips just stores all generated outcome slips
     let allSlips = []
 
     // TheSecretN is just a placeholder for the number of games that will be played 
