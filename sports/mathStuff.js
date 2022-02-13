@@ -29,7 +29,7 @@ function cartesianProduct(arr) {
 }
 
 
-// so this does basically the same thing as the function implemented above bute it is a bit more readable 😉
+// so this does basically the same thing as the function implemented above but it is a bit more readable 😉
 // To my code golfers 🏌️‍♀️ ⛳️ feat your eyes at functional goodeness 🤤
 const cartesianProductGolf = (...a) => a.reduce((a, b) => a.flatMap(d => b.map(e => [d, e].flat())));
 
