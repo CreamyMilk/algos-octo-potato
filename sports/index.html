@@ -20,12 +20,12 @@
     <br />
     <a href="#tool">Jump to solution</a>
 
-    <h3>So stastically 📊 how many possble `outcome slips` can be generated for (N) games 💁 ?</h3>
+    <h3>So statistically 📊 how many possble `outcome slips` can be generated for (N) games 💁 ?</h3>
     All football games can only have on of three (3) states:
     <ul>
         <li>Team A Wins</li>
         <li>Team B Wins</li>
-        <li>Gmae is a draw</li>
+        <li>Game is a draw</li>
     </ul>
 
     So for N games played back to back the Number of slips that can be generated are:
@@ -48,28 +48,29 @@
     <br />
 
     <h3>Solution</h3>
-    The great thing is this is a some what solved problem in the field of Mathematics and Set Theory.
+    The great thing is that this is some what of a solved problem in the field of Mathematics and Set Theory.
     <br />
 
-    Mathematics mainly use sorcery 🧪 called
+    Mathematics mainly a form of sorcery 🧪 called
     <a href="https://en.wikipedia.org/wiki/Cartesian_product#Cartesian_products_of_several_sets">Cartesian Products of
         Sets</a>
     to achieve this
     <br />
-
-
     <br />
     So how do we program `Cartesian Products` ?
-    <ul>
+    ul>
         <li>Backtracking : Basically have two pointers to iterate between all possible states an element for each and
             every possible index of a game </li>
         <li>Recurrsion : Just make a functions that calls itself </li>
         <li>Use itertools : The python standard libary has a inbuilt libray called itertools which implement the
-            Cartesian stuff in the <a href="https://docs.python.org/3/library/itertools.html?highlight=itertools.product#itertools.product">
-            product function</a></li>
+            Cartesian stuff in the <a
+                href="https://docs.python.org/3/library/itertools.html?highlight=itertools.product#itertools.product">
+                product function</a></li>
     </ul>
 
-    <em>If you really want to see how the code is written just <a href="https://github.com/CreamyMilk/algos-octo-potato/blob/main/sports/mathStuff.js">click here </a>👀( ps its just a single file ) </em>
+    <em>If you really want to see how the code is written just <a
+            href="https://github.com/CreamyMilk/algos-octo-potato/blob/main/sports/mathStuff.js">click here </a>👀( ps
+        its just a single file ) </em>
 
 
     <!---The Above stuff is just how it was made beyond this point is the 🥸 nerdy stuff-->
@@ -78,9 +79,9 @@
     <!-- <em>On a side note computed cross produts gets harder as you go so the maximum I will return is for 13 games/em> <em>If you have a supper computer you can set a hard limit at 30 games  </em> -->
     <p>Pick the number of games using the slider</p>
     <div>
-    <label for="numberofgamesInput">N = </label>
-    <input type="range" min="1" max="15" value="2" id="nbox">
-    <span id="slider-val"> --- drag me 👀</span>
+        <label for="numberofgamesInput">N = </label>
+        <input type="range" min="1" max="15" value="2" id="nbox">
+        <span id="slider-val"> --- drag me 👀</span>
     </div>
     <div id="TheResultsSection">
         <p>Number of unique Slips:
