@@ -15,18 +15,18 @@
 
 <body>
     <h2>The Goal</h2>
-    The following programs is used to gereate all possible betting slips that can be generated for N number of games.
+    The following programs is used to generate all possible unique betting slips for N number of consecutive games.
     <br />
     <br />
     <a href="#tool">Jump to solution</a>
 
     <h3>So statistically 📊 how many possble `outcome slips` can be generated for (N) games 💁 ?</h3>
     All football games can only have on of three (3) states:
-    <ul>
+    <ol>
         <li>Team A Wins</li>
         <li>Team B Wins</li>
         <li>Game is a draw</li>
-    </ul>
+    </ol>
 
     So for N games played back to back the Number of slips that can be generated are:
     <pre>
@@ -39,8 +39,8 @@
 
    </pre>
 
-    Because all the valus are multiples of 3 we can just conclude the number of matches
-    <h3> so 3 <sup>N</sup> </h3>
+    Because all the values are multiples of 3 we can just conclude the number of slips for n matches using
+    <h3> = 3 <sup>N</sup> </h3>
 
     <em style="color : grey; font-size:small">Hi Math wizard si u can make a proof for the above claim</em>
 
@@ -51,7 +51,7 @@
     The great thing is that this is some what of a solved problem in the field of Mathematics and Set Theory.
     <br />
 
-    Mathematicians mainly a form of sorcery 🧪 called
+    Mathematicians mainly use a form of sorcery 🧪 called
     <a href="https://en.wikipedia.org/wiki/Cartesian_product#Cartesian_products_of_several_sets">Cartesian Products of
         Sets</a>
     to achieve this
@@ -76,7 +76,7 @@
     <!---The Above stuff is just how it was made beyond this point is the 🥸 nerdy stuff-->
 
     <h1 id="tool">🦄 The Online tool</h1>
-    <!-- <em>On a side note computed cross produts gets harder as you go so the maximum I will return is for 13 games/em> <em>If you have a supper computer you can set a hard limit at 30 games  </em> -->
+    <!-- <em>On a side note computed cross produts gets harder as you go so the maximum I will return is for 13 games/em> <em>If you have a super computer you can set a hard limit at 30 games  </em> -->
     <p>Pick the number of games using the slider</p>
     <div>
         <label for="numberofgamesInput">N = </label>
