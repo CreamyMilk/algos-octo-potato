@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Permutation Generator</title>
+</head>
+
+<body>
+    <h2>The Goal</h2>
+    The following programs is used to gereate all possible betting slips that can be generated for N number of games.
+    <br />
+    <br />
+    <a href="#tool">Jump to solution</a>
+
+    <h3>So stastically 📊 how many possble `outcome slips` can be generated for (N) games 💁 ?</h3>
+    All football games can only have on of three (3) states:
+    <ul>
+        <li>Team A Wins</li>
+        <li>Team B Wins</li>
+        <li>Gmae is a draw</li>
+    </ul>
+
+    So for N games played back to back the Number of slips that can be generated are:
+    <pre>
+            N(Matches)   |||  Possbile Combinations
+            -------------------------------------------
+                1         |         3
+                2         |         9
+                3         |         27
+                4         |         81
+
+   </pre>
+
+    Because all the valus are multiples of 3 we can just conclude the number of matches
+    <h3> so 3 <sup>N</sup> </h3>
+
+    <em style="color : grey; font-size:small">Hi Math wizard si u can make a proof for the above claim</em>
+
+    <br />
+    <br />
+
+    <h3>Solution</h3>
+    The great thing is this is a some what solved problem in the field of Mathematics and Set Theory.
+    <br />
+
+    Mathematics mainly use sorcery 🧪 called
+    <a href="https://en.wikipedia.org/wiki/Cartesian_product#Cartesian_products_of_several_sets">Cartesian Products of
+        Sets</a>
+    to achieve this
+    <br />
+
+
+    <br />
+    So how do we program `Cartesian Products` ?
+    <ul>
+        <li>Backtracking : Basically have two pointers to iterate between all possible states an element for each and
+            every possible index of a game </li>
+        <li>Recurrsion : Just make a functions that calls itself </li>
+        <li>Use itertools : The python standard libary has a inbuilt libray called itertools which implement the
+            Cartesian stuff in the <a href="https://docs.python.org/3/library/itertools.html?highlight=itertools.product#itertools.product">
+            product function</a></li>
+    </ul>
+
+    <em>If you really want to see how the code is written just <a href="https://github.com/CreamyMilk/algos-octo-potato">click here </a>👀( ps its just a single file ) </em>
+
+
+    <!---The Above stuff is just how it was made beyond this point is the 🥸 nerdy stuff-->
+
+    <h1 id="tool">🦄 The Online tool</h1>
+    <!-- <em>On a side note computed cross produts gets harder as you go so the maximum I will return is for 13 games/em> <em>If you have a supper computer you can set a hard limit at 30 games  </em> -->
+    <p>Pick the number of games using the slider</p>
+    <div>
+    <label for="numberofgamesInput">N = </label>
+    <input type="range" min="1" max="15" value="2" id="nbox">
+    <span id="slider-val"> --- drag me 👀</span>
+    </div>
+    <div id="TheResultsSection">
+        <p>Number of unique Slips:
+            <span id="noOfSlips"> <strong>0.00</strong></span>
+        </p>
+        <p id="error"> </p>
+        </p>
+
+        <p>New slips</p>
+        <p id="generated">
+
+        </p>
+    </div>
+
+    <br /><br />
+
+</body>
+<script src="./mathStuff.js">j</script>
+<script>
+    let sliderValElem = document.getElementById('slider-val');
+    let generatedElem = document.getElementById('generated');
+    let nGamesInput = document.getElementById('nbox');
+    let nSlipsElem = document.getElementById('noOfSlips');
+    let errorElem = document.getElementById('error');
+
+    nGamesInput.addEventListener('input', function (e) {
+        const hardLimit = 11
+        let input = e.target.value;
+        sliderValElem.innerText = input;
+        if (isTheInputJustNumbers(input)) {
+            let numberofgames = parseInt(input);
+            if (numberofgames > hardLimit) {
+                errorElem.innerHTML = `🥶 Relax this isn't a super computer 👨‍🚒 how do you expect it to compute <strong>${(3 ** numberofgames).toLocaleString()}</strong> slips`;
+                return
+            }
+
+            errorElem.innerHTML = '';
+
+            // If you want more info of how the 🧙‍♂ mage made this function
+            //  You can got through `./mathStuff.js` if you want to see how it works
+            let generatedSlips = getAllOutcomeSlips(numberofgames);
+
+            let noOfOutcomes = generatedSlips.length
+            nSlipsElem.innerText = noOfOutcomes;
+            generatedElem.innerHTML = JSON.stringify(generatedSlips, null, 3).split("]").join("]<br />");
+        }
+    })
+
+
+    // Future work remove the slider for a textbox
+    function isTheInputJustNumbers(someInput) {
+        return true
+    }
+
+</script>
+
+</html>
